@@ -8,9 +8,10 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>_MYS1_Practica3_P16</RootNamespace>
     <AssemblyName>[MYS1]Practica3_P16</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,22 +32,44 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SimioAPI">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Simio\SimioAPI.dll</HintPath>
+    <Reference Include="QlmLicenseLib, Version=12.0.19294.2, Culture=neutral, PublicKeyToken=9c65e32c060523a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Simio\QlmLicenseLib.dll</HintPath>
     </Reference>
-    <Reference Include="SimioAPI.Extensions">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Simio\SimioAPI.Extensions.dll</HintPath>
+    <Reference Include="Simio.resources, Version=11.197.19514.0, Culture=es, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Simio\es\Simio.resources.dll</HintPath>
     </Reference>
-    <Reference Include="SimioAPI.Graphics">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Simio\SimioAPI.Graphics.dll</HintPath>
+    <Reference Include="SimioAPI, Version=11.197.19514.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Simio\SimioAPI.dll</HintPath>
     </Reference>
-    <Reference Include="SimioDLL">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Simio\SimioDLL.dll</HintPath>
+    <Reference Include="SimioAPI.Extensions, Version=11.197.19514.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Simio\SimioAPI.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="SimioEnums">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Simio\SimioEnums.dll</HintPath>
+    <Reference Include="SimioAPI.Graphics, Version=11.197.19514.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Simio\SimioAPI.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="SimioDLL, Version=11.197.19514.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Simio\SimioDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="SimioEnums, Version=11.197.19514.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Simio\SimioEnums.dll</HintPath>
+    </Reference>
+    <Reference Include="SimioReplicationRunnerContracts, Version=11.197.19514.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Simio\SimioReplicationRunnerContracts.dll</HintPath>
+    </Reference>
+    <Reference Include="SimioTypes, Version=11.197.19514.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Simio\SimioTypes.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -83,7 +107,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
