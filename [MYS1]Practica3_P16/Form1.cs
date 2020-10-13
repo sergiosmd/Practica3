@@ -6,7 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using SimioAPI;
+using _MYS1_Practica3_P16.Excel;
+
 
 namespace _MYS1_Practica3_P16
 {
@@ -24,26 +25,15 @@ namespace _MYS1_Practica3_P16
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int ModelEntity = 0;
-            int Model = 1;
+            
+        }
 
-            ISimioProject practica3;
-            string proyectoBase = "ModelBase.spfx";
-            string proyectoPractica3 = "Practica3.spfx";
-            string[] warnings;
-            IIntelligentObjects objIIObjs;
-            IModel model;
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ReadExcel objExcel = new ReadExcel();
+            string objJson = objExcel.readCSV("mapa.csv", true);
+            Console.WriteLine(objJson);
 
-            practica3 = SimioProjectFactory.LoadProject(proyectoBase, out warnings);
-            model = practica3.Models[Model];
-            objIIObjs = model.Facility.IntelligentObjects;
-
-            for (int i = 0; i < 100; i++)
-            {
-                //objIIObjs.CreateObject();
-            }
-
-            SimioProjectFactory.SaveProject(practica3, proyectoPractica3, out warnings);
         }
     }
 }
