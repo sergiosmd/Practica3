@@ -32,6 +32,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SimioAPI">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Simio\SimioAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="SimioAPI.Extensions">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Simio\SimioAPI.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="SimioAPI.Graphics">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Simio\SimioAPI.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="SimioDLL">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Simio\SimioDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="SimioEnums">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Simio\SimioEnums.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,6 +67,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimioApi\Base.cs" />
+    <Compile Include="SimioApi\Entity.cs" />
+    <Compile Include="SimioApi\Modelo.cs" />
+    <Compile Include="SimioApi\Server.cs" />
+    <Compile Include="SimioApi\Source.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
