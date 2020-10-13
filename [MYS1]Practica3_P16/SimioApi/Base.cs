@@ -12,10 +12,21 @@ namespace _MYS1_Practica3_P16.SimioApi
 {
     class Base
     {
+        IModel model;
+        public string tipo;
         public string nombre;
         public int ejeX;
         public int ejeY;
 
         public Base() { }
+
+        enum Tipo 
+        {
+            Server,
+            Combiner,
+            Source,
+            TimePath,
+            Path
+        }
     }
 }

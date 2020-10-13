@@ -13,6 +13,7 @@ namespace _MYS1_Practica3_P16.SimioApi
             this.nombre = strNombre;
             this.ejeX = intEjeX;
             this.ejeY = intEjeY;
+            this.tipo = "Source";
         }
     }
 }
