@@ -11,7 +11,7 @@ namespace _MYS1_Practica3_P16.Excel
 {
     class ReadExcel
     {
-        public string readCSV(string pathCSV, bool blnHeader)
+        public List<CoordenadaDTO> readCSV(string pathCSV, bool blnHeader)
         {
             var listPuntos = new List<CoordenadaDTO>();
 
@@ -24,19 +24,19 @@ namespace _MYS1_Practica3_P16.Excel
                 while (!reader.EndOfStream)
                 {
                     var line = reader.ReadLine();
-                    var values = line.Split(';');
+                    var values = line.Split(',');
                     listPuntos.Add(new CoordenadaDTO
                     {
                         id = int.Parse(values[0]),
                         ejeX = int.Parse(values[1]),
-                        ejeY = int.Parse(values[2]),
-                        ejeZ = int.Parse(values[3])
+                        ejeZ = int.Parse(values[2]),
+                        ejeY = int.Parse(values[3])
                     }
                     );
 
                 }
             }
-            return JsonConvert.SerializeObject(listPuntos);
+            return listPuntos;
         }
     }
 }

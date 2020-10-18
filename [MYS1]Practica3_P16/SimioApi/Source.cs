@@ -9,8 +9,8 @@ namespace _MYS1_Practica3_P16.SimioApi
 {
     class Source: Base
     {
-        public Source(string strNombre, int intEjeX, int intEjeY) {
-            this.nombre = strNombre;
+        public Source(int id, int intEjeX, int intEjeY) {
+            this.id = id;
             this.ejeX = intEjeX;
             this.ejeY = intEjeY;
             this.tipo = "Source";

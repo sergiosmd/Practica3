@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using _MYS1_Practica3_P16.Excel;
@@ -9,39 +10,65 @@ namespace _MYS1_Practica3_P16.SimioApi
 {
     class Modelo
     {
-
-        public Modelo()
+        string nombrePryctBase;
+        string nombrePryctNuevo;
+        ISimioProject modSimioNuevo;
+        string[] warnings;
+        public Modelo(string nombreMdlBase, string nombreMdlFinal)
         {
 
-
+            this.nombrePryctBase = nombreMdlBase;
+            this.nombrePryctNuevo = nombreMdlFinal;
         }
 
         public void crearModelo()
         {
 
-            ISimioProject practica3;
-            string proyectoBase = "ModelBase.spfx";
-            string proyectoPractica3 = "Practica3.spfx";
             string[] warnings;
-            IIntelligentObjects objIIObjs;
-            IModel model;
             ReadExcel objExcel;
+            INodeObject nodoInicio = null;
+            INodeObject nodoFin = null;
+            INodeObject nodoInicioMapa = null;
+            Path objPath = new Path();
 
-            practica3 = SimioProjectFactory.LoadProject(proyectoBase, out warnings);
-            model = practica3.Models[(int)Tipo.Model];
-            objIIObjs = model.Facility.IntelligentObjects;
+            modSimioNuevo = SimioProjectFactory.LoadProject(nombrePryctBase, out warnings);
+            Base.model = modSimioNuevo.Models[(int)Tipo.Model];
 
             objExcel = new ReadExcel();
-            var listPuntos = objExcel.readCSV("mapa.csv", true);
+            var listPuntos = objExcel.readCSV("puntos.csv",false);
 
+            foreach(var item in listPuntos)
+            {
+                TransferNode tn = new TransferNode(item.id, item.ejeX, item.ejeY);
+                nodoFin = tn.getTransferNode();
 
-            guardarNuevoProyecto(practica3, proyectoPractica3, out warnings);
+                if(nodoInicioMapa == null)
+                {
+                    nodoInicioMapa = nodoFin;
+                }
 
+                if (nodoInicio != null)
+                {
+                    objPath.Enlazar(nodoInicio, nodoFin);
+                }
+                nodoInicio = nodoFin;
+            }
+
+            objPath.Enlazar(nodoFin, nodoInicioMapa);
         }
 
-        private void guardarNuevoProyecto(ISimioProject practica3, string proyectoPractica3, out string[] warnings)
+        private void WriteLog(string v)
         {
-            SimioProjectFactory.SaveProject(practica3, proyectoPractica3, out warnings);
+            string path = "logGT.txt";
+            using(StreamWriter sw = File.AppendText(path))
+            {
+                sw.WriteLine(v);
+            }
+        }
+
+        public void guardarNuevoProyecto()
+        {
+            SimioProjectFactory.SaveProject(modSimioNuevo, nombrePryctNuevo, out warnings);
         }
 
         enum Tipo

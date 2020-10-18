@@ -99,8 +99,10 @@
     <Compile Include="SimioApi\Base.cs" />
     <Compile Include="SimioApi\Entity.cs" />
     <Compile Include="SimioApi\Modelo.cs" />
+    <Compile Include="SimioApi\Path.cs" />
     <Compile Include="SimioApi\Server.cs" />
     <Compile Include="SimioApi\Source.cs" />
+    <Compile Include="SimioApi\TransferNode.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
