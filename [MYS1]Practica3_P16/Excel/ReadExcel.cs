@@ -24,15 +24,16 @@ namespace _MYS1_Practica3_P16.Excel
                 while (!reader.EndOfStream)
                 {
                     var line = reader.ReadLine();
-                    var values = line.Split(',');
+                    var values = line.Split(';');
                     listPuntos.Add(new CoordenadaDTO
                     {
                         id = int.Parse(values[0]),
                         ejeX = int.Parse(values[1]),
                         ejeZ = int.Parse(values[2]),
-                        ejeY = int.Parse(values[3])
+                        ejeY = int.Parse(values[3]),
+                        distancia = int.Parse(values[5])
                     }
-                    );
+                    ); ;
 
                 }
             }

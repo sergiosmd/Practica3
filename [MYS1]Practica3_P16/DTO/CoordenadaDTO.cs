@@ -12,5 +12,7 @@ namespace _MYS1_Practica3_P16.DTO
         public int ejeX { get; set; }
         public int ejeY { get; set; }
         public int ejeZ { get; set; }
+
+        public int distancia { get; set; }
     }
 }

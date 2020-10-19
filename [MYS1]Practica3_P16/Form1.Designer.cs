@@ -33,11 +33,13 @@
             this.LabGrupo = new System.Windows.Forms.Label();
             this.labCarnets = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.labTextoNum = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(43, 138);
+            this.button1.Location = new System.Drawing.Point(42, 196);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(102, 48);
             this.button1.TabIndex = 0;
@@ -47,7 +49,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(220, 138);
+            this.button2.Location = new System.Drawing.Point(219, 196);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(102, 48);
             this.button2.TabIndex = 1;
@@ -84,11 +86,33 @@
             this.label1.Text = "Modelación y Simulación 1\r\n2do. Semestre\r\n2020\r\n\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // labTextoNum
+            // 
+            this.labTextoNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labTextoNum.Location = new System.Drawing.Point(57, 154);
+            this.labTextoNum.Name = "labTextoNum";
+            this.labTextoNum.Size = new System.Drawing.Size(264, 22);
+            this.labTextoNum.TabIndex = 5;
+            this.labTextoNum.Text = "200915305 200715274";
+            this.labTextoNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(116, 138);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(128, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Ingrese el texto a imprimir:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 224);
+            this.ClientSize = new System.Drawing.Size(380, 272);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labTextoNum);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labCarnets);
             this.Controls.Add(this.LabGrupo);
@@ -97,6 +121,7 @@
             this.Name = "Form1";
             this.Text = "Practica 3 - Modelación y Simulación 1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -107,6 +132,8 @@
         private System.Windows.Forms.Label LabGrupo;
         private System.Windows.Forms.Label labCarnets;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox labTextoNum;
+        private System.Windows.Forms.Label label2;
     }
 }
 
